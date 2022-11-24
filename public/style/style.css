@@ -13,6 +13,12 @@ li {
   text-align: -webkit-match-parent;
 }
 
+.fix-header{
+  position : fixed;
+  width:100vw;
+  z-index:999;
+}
+
 .headerEvent {
   width: 100%;
   background-color: #1646fe;
