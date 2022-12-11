@@ -390,9 +390,11 @@ img{
 }
 
 .desc{
-  
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   font-size: 14px;
-  -webkit-line-clamp: 3 !important;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
@@ -535,3 +537,42 @@ img{
   background-size: 20px auto;
 }
 
+.sub-sec-content {
+  margin-top:20px;
+  padding-top:50px;
+  border-top: 1px solid;
+
+}
+
+
+/* 글쓰는곳 */
+.writeBoardform{
+  width: 600px;
+  margin : auto;
+  margin-top:100px;
+}
+
+.BoardTitle{
+  margin:20px 0;
+  width:100%;
+}
+
+.sub_info{
+  width: 100%;
+  margin:20px 0;
+}
+
+.sub_info_tag{
+  width:45%;
+  margin-right:55px;
+}
+
+.sub_info_user{
+  width:45%;
+}
+
+.BoardContent{
+  margin:20px 0;
+  width: 100%;
+  height: 500px;
+}

@@ -1,6 +1,7 @@
 {
   "name": "devocean",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -19,7 +20,9 @@
   },
   "homepage": "https://github.com/Chu-No/DEVOCEAN#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "moment": "^2.29.4",
     "mysql": "^2.18.1"
   },
   "devDependencies": {

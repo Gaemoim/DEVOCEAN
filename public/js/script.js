@@ -1,4 +1,5 @@
-const addMemoform = document.getElementById('sec-area-list01')
+// import moment from '../../node_modules/moment/moment.js';
+const addMemoform = document.getElementById('sec-area-list01');
 
 let blogArr=[]
 
@@ -43,8 +44,8 @@ function searchBlog(){
 }
 
 function renderBlog(){
-    
     const movieHtml = blogArr.map((blog) => {
+        console.log(blog.regdate)
         return `
         <li>
             <div>
@@ -56,7 +57,7 @@ function renderBlog(){
                         <img src="http://localhost:3000/static/assets/background.png" data-commlist="AI Fellowship">
                     </a>
                     <div class="sec-cont">
-                        <h3 class="title" data-commlist="AI Fellowship">${blog.title}</h3>
+                        <h3 class="title" data-commlist="AI Fellowship" onclick="goDetail(this,${blog.boardId},event);return false;">${blog.title}</h3>
                         <p class="desc"  data-commlist="AI Fellowship">${blog.content} </p>
                         <div class="tag">
                             <span class="color0" style="cursor:point">#test</span>
