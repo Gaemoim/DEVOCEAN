@@ -24,14 +24,14 @@ function searchBlog(){
                 console.log(data)
                 $.each(data, function(i, item) {
                     const blogObj ={
-                        boardId : item.board_id,
-                        writter : item.writter,
-                        content : item.content,
-                        title : item.title,
+                        boardId : item.BoardID,
+                        writter : item.Writter,
+                        content : item.contents,
+                        title : item.BoardTitle,
                         regdate: item.regdate,
                         good : item.good,
                         comment : item.comment,
-                        views : item.views
+                        views : item.viewer
                     }
                     blogArr.push(blogObj)
                     // dbArr.push(item)

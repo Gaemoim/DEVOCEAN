@@ -25,15 +25,16 @@ function searchBlogDetail(){
                 console.log(data)
                 $.each(data, function(i, item) {
                     const blogDetailObj ={
-                        boardId : item.board_id,
-                        writter : item.writter,
-                        content : item.content,
-                        title : item.title,
+                        boardId : item.BoardID,
+                        writter : item.Writter,
+                        content : item.contents,
+                        title : item.BoardTitle,
                         regdate: item.regdate,
                         good : item.good,
                         comment : item.comment,
                         views : item.views
                     }
+                    console.log(blogDetailObj)
                     blogDetailArr.push(blogDetailObj)
                     
                 });

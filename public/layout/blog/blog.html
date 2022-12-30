@@ -9,10 +9,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../style/style.css">
+  <link rel="stylesheet" href="http://localhost:3000/static/style/style.css">
 </head>
 
 <body>
+    <header>
+        <div class="fix-header">
+          <div class="headerEvent">
+            <a href="https://devocean.sk.com/notice/view.do?id=178" class="eventIntro">
+              <img src="http://localhost:3000/static/assets/eventIntro.png" alt="eventIntro">
+            </a>
+          </div>
+      
+          <div>
+            <div class="headerInner">
+              <h1><a href="/">DEVOCEAN</a></h1>
+              <div class="headerNav">
+                <nav class="navbar navbar-expand-lg ">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="http://localhost:3000/api/render/blog">블로그</a>
+                    <a class="navbar-brand" href="#">전문가</a>
+                    <a class="navbar-brand" href="#">공지사항</a>
+                    {% if userInfo%}
+                    <a class="navbar-brand" href="/static/layout/login.html">{{userInfo}}</a>
+                    {% else %}
+                    <a class="navbar-brand" href="/static/layout/login.html">로그인</a>
+                    {% endif %}
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+        </div>
+      </header>
   <div data-include-path="../header.html"></div>
   <div class="container">
         <section class="subvisual fadeIn animate" style="visibility: visible;">
@@ -56,6 +87,9 @@
                         <ul class="sec-area-list01" id="sec-area-list01">
                             
                         </ul>
+                        <a class="write_board_btn" href="http://localhost:3000/api/render/blogWrite">
+                            글쓰기
+                        </a>
 
                     </div>
                     <aside class="sec-aside">
@@ -70,9 +104,7 @@
                     </aside>
                 </div>
             </div>
-            <a class="write_board_btn" href="./sub/boardWrite.html">
-                글쓰기
-            </a>
+            
         </setion>
         <form name="goForm" id="goForm">
             <input type="hidden" name="ID" id="ID">
@@ -84,9 +116,9 @@
     </div>  
   <footer></footer>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="../../js/script.js"></script>
-  <script src="../../js/includeHTML.js"></script>
-  <script src="../../js/external/blog/blog-index.js"></script>
-  <script src="../../js/external/component/BlogList.js"></script>
+  <script src="http://localhost:3000/static/js/script.js"></script>
+  <script src="http://localhost:3000/static/js/includeHTML.js"></script>
+  <script src="http://localhost:3000/static/js/external/blog/blog-index.js"></script>
+  <script src="http://localhost:3000/static/js/external/component/BlogList.js"></script>
 </body>
 

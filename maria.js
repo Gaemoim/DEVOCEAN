@@ -3,7 +3,7 @@ const maria = require('mysql');
 const conn = maria.createConnection({
     host:'localhost',
     user:'root',
-    password:'154131',
+    password:'kim15413',
     database:'devocean'
 });
 
