@@ -2,10 +2,13 @@ const writeBoardform = document.getElementById('writeBoardform')
 const newBoardTitle = document.getElementById("BoardTitle")
 const newBoardTag = document.getElementById("sub_info_tag")
 const newBoardUser = document.getElementById("sub_info_user")
-const newBoardContent = document.getElementById("BoardContent")
-const showTestHtmlBtn = document.getElementById("showHtmlModeBtn")
-const WirteModeBtn = document.getElementById("writeModeBtn")
 const testHtmlform = document.getElementById("testHtmlform")
+const editor = new toastui.Editor({
+  el: document.querySelector('#editor'),
+  previewStyle: 'vertical',
+  height: '500px',
+  initialValue: '안녕하세요. 코딩노잼입니다.'
+});
 
 
 
@@ -16,8 +19,8 @@ writeBoardform.addEventListener('submit', (e) =>{
 })
 
 function addNewboarder(){
-    toMarkdown()
-    const boardContentToHtml = HtmlArr[0]
+    const boardContentToHtml = editor.getHTML();
+    console.log(editor.getHTML());
     var boardData = {"title":newBoardTitle.value,"writter":newBoardUser.value,"content":boardContentToHtml};
     console.log(boardData);
     $.ajax({
@@ -28,6 +31,10 @@ function addNewboarder(){
               data : boardData,
               success : function (data){
                 console.log(data)
+                if (data== true ) {
+                  alert( "글쓰기가 완료되었습니다." );
+                  window.location = document.referrer;
+                }
                 
               },
               error : function(e){
@@ -39,49 +46,3 @@ function addNewboarder(){
 
 let HtmlArr = []
 
-showTestHtmlBtn.addEventListener("click", showTestHtml);
-WirteModeBtn.addEventListener("click", writeMode);
-
-
-
-function showTestHtml(){
-  
-  toMarkdown();
-
-  renderHtml();
-  HtmlArr = []
-}
-
-function toMarkdown(){
-  HtmlArr = []
-  $.ajax({
-    type: "POST",
-    dataType: "html",
-    processData: false,
-    url: "https://api.github.com/markdown/raw",
-    data: newBoardContent.value,
-    contentType: "text/plain",
-    success: function(data){
-        console.log(data);
-        HtmlArr.push(data);
-    }, 
-    error: function(jqXHR, textStatus, error){
-        console.log(jqXHR, textStatus, error);
-    }
-  });
-  
-}
-
-function renderHtml(){
-  const TestHtml = HtmlArr.map((test) => {
-    return `<div>${test}</div>`
-  }).join('');
-  testHtmlform.innerHTML = TestHtml
-  testHtmlform.style.display = "inline"
-  newBoardContent.style.display = "none"
-}
-
-function writeMode(){
-  testHtmlform.style.display = "none"
-  newBoardContent.style.display = "inline"
-}

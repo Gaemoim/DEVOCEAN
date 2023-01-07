@@ -43,6 +43,12 @@ function searchBlog(){
     })
 }
 
+function removeHtmlTag(text){
+    const text1 = text.replace(/<[^>]*>?/g, '');
+    console.log(text1);
+    return text1;
+}
+
 function renderBlog(){
     const movieHtml = blogArr.map((blog) => {
         console.log(blog.regdate)
@@ -58,7 +64,7 @@ function renderBlog(){
                     </a>
                     <div class="sec-cont">
                         <h3 class="title" data-commlist="AI Fellowship" onclick="goDetail(this,${blog.boardId},event);return false;">${blog.title}</h3>
-                        <p class="desc"  data-commlist="AI Fellowship">${blog.content} </p>
+                        <p class="desc"  data-commlist="AI Fellowship">${removeHtmlTag(blog.content)} </p>
                         <div class="tag">
                             <span class="color0" style="cursor:point">#test</span>
                         </div>

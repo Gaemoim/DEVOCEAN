@@ -129,10 +129,10 @@ function getRegDate(){
 app.post('/blog/addNewBoarder', (req,res) => {
   console.log(req.body)
   var query_txt = "INSERT INTO Board (Writter, contents, BoardTitle, regdate) VALUE ('" + req.body["writter"] + "','" + req.body['content'] + "','" + req.body['title'] + "','" +getRegDate() +"')";
-  console.log(query_txt)
   maria.query(query_txt, function(err, rows, fields) {
       if(!err) {
-        res.send(rows); // responses send rows
+        console.log("aaa");
+        res.send(true);
       } else {
         console.log("err : " + err);
         res.send(err);  // response send err

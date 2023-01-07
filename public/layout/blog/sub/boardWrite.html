@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951QD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="http://localhost:3000/static/style/style.css">
+  <!-- <link rel="stylesheet" href="http://localhost:3000/static/style/login.css"> -->
 </head>
 
 <body>
@@ -46,17 +47,27 @@
   </header>
   <div class="container">
     <form id="writeBoardform" class="writeBoardform">
-        <input type="text" id="BoardTitle" class="BoardTitle" placeholder="title">
-        <div class="sub_info">
-          <input type="text" id="sub_info_tag" class="sub_info_tag" placeholder="tag">
-          <input type="text" id="sub_info_user" class="sub_info_user" placeholder="user" value="{{userInfo}}" readonly>
+        <div style="margin-bottom:10px">
+          <div class="int-area">
+            <input type="text" name="username" id="BoardTitle" autocomplete="off" required>
+            <label for="id">Title</label>
+          </div>
+          <div class="int-area">
+              <input type="text" name="password" id="sub_info_user" autocomplete="off" placeholder="user" value="{{userInfo}}" readonly>
+              <label for="user" class="user_label">User</label>
+          </div>
+          <div class="int-area">
+            <input type="text" name="id" id="sub_info_tag" autocomplete="off" required>
+            <label for="user">Tag</label>
+          </div>
         </div>
         <div class="contentWriteArea">
-          <div class="subButtonArea">
+          <!-- <div class="subButtonArea">
             <button id = "writeModeBtn">markdown</button>
             <button id ='showHtmlModeBtn'>html</button>
-          </div>
-          <textarea type="text" id="BoardContent" class="BoardContent" placeholder="main_content"></textarea>
+          </div> -->
+          <div id="editor"></div>
+          <!-- <textarea type="text" id="BoardContent" class="BoardContent" placeholder="main_content"></textarea> -->
           <div class="htmlTestDiv" id="testHtmlform" style="display:none"></div>
         </div>
         <button id="addBoarder" type="submit">추가</button>
@@ -71,9 +82,21 @@
     </form>   
   </div>  
   <footer></footer>
+  
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script> <!-- toast Ui-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="http://localhost:3000/static/js/external/component/writeBoard.js"></script>
   <script src="http://localhost:3000/static/js/includeHTML.js"></script>
+  
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+  <script>
+    const editor = new toastui.Editor({
+        el: document.querySelector('#editor'),
+        previewStyle: 'vertical',
+        height: '500px',
+        initialValue: '안녕하세요. 코딩노잼입니다.'
+    });
+  </script>
   <!-- <script src="../../js/external/blog/blog-index.js"></script>
   <script src="../../js/external/component/BlogList.js"></script> -->
 </body>
