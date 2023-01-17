@@ -3,44 +3,44 @@
 <head>
  
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script> -->
   <link rel="stylesheet" href="http://localhost:3000/static/style/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="fix-header">
-          <div class="headerEvent">
-            <a href="https://devocean.sk.com/notice/view.do?id=178" class="eventIntro">
-              <img src="http://localhost:3000/static/assets/eventIntro.png" alt="eventIntro">
-            </a>
-          </div>
-      
-          <div>
-            <div class="headerInner">
-              <h1><a href="/">DEVOCEAN</a></h1>
-              <div class="headerNav">
-                <nav class="navbar navbar-expand-lg ">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="http://localhost:3000/api/render/blog">블로그</a>
-                    <a class="navbar-brand" href="#">전문가</a>
-                    <a class="navbar-brand" href="#">공지사항</a>
-                    {% if userInfo%}
-                    <a class="navbar-brand" href="/static/layout/login.html">{{userInfo}}</a>
-                    {% else %}
-                    <a class="navbar-brand" href="/static/layout/login.html">로그인</a>
-                    {% endif %}
-                  </div>
-                </nav>
+  <header>
+    <div class="fix-header">
+      <div class="headerEvent">
+        <a href="https://devocean.sk.com/notice/view.do?id=178" class="eventIntro">
+          <img src="http://localhost:3000/static/assets/eventIntro.png" alt="eventIntro">
+        </a>
+      </div>
+  
+      <div>
+        <div class="headerInner">
+          <h1><a href="/">DEVOCEAN</a></h1>
+          <div class="headerNav">
+            <nav class="navbar navbar-expand-lg ">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="http://localhost:3000/api/render/blog">블로그</a>
+                <a class="navbar-brand" href="#">전문가</a>
+                <a class="navbar-brand" href="#">공지사항</a>
+                {% if userInfo%}
+                <a class="navbar-brand" href="/static/layout/login.html">{{userInfo}}</a>
+                {% else %}
+                <a class="navbar-brand" href="/static/layout/login.html">로그인</a>
+                {% endif %}
               </div>
-            </div>
-          </div>
-          
+            </nav>
           </div>
         </div>
-      </header>
-    <div class="container">
+      </div>
+      
+      </div>
+    </div>
+  </header>
+  <div class="container">
         <section class="blog cont01">
             <div class="sub-sec-inner">
                 <div class="sub-sec-nav">
@@ -63,7 +63,7 @@
             </div>
         </section>
     </div>
-</body>
-<script src="http://localhost:3000/static/js/external/component/blogDetail.js"></script>
-<script src="http://localhost:3000/static/js/includeHTML.js"></script>
-<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="http://localhost:3000/static/js/external/component/blogDetail.js"></script>
+  <script src="http://localhost:3000/static/js/includeHTML.js"></script>

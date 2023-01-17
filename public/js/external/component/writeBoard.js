@@ -26,7 +26,7 @@ function addNewboarder(){
     $.ajax({
         //////content type 명시하지 않음
               type: "post",
-              url : "http://localhost:3000/blog/addNewBoarder",
+              url : "http://localhost:3000/api/blog/addNewBoarder",
               async: false,
               data : boardData,
               success : function (data){

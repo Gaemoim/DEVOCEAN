@@ -53,21 +53,6 @@ app.use(
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
-function logincheck(session){
-
-}
-// app.get('/', (req, res) => {
-//   const { user } = req.session;
-  
-//   if(user){
-//       console.log(user);
-//       res.render('index', { user });
-//       return;
-//   }
-
-//   res.render('index');
-// });
-
 app.get('/', (req, res) => {
   if (req.session.user) {
     console.log(req.session.user.id)
@@ -126,7 +111,7 @@ function getRegDate(){
   return regdate;
 }
 
-app.post('/blog/addNewBoarder', (req,res) => {
+app.post('api/blog/addNewBoarder', (req,res) => {
   console.log(req.body)
   var query_txt = "INSERT INTO Board (Writter, contents, BoardTitle, regdate) VALUE ('" + req.body["writter"] + "','" + req.body['content'] + "','" + req.body['title'] + "','" +getRegDate() +"')";
   maria.query(query_txt, function(err, rows, fields) {

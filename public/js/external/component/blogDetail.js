@@ -18,7 +18,7 @@ function searchBlogDetail(){
     $.ajax({
         //////content type 명시하지 않음
               type: "post",
-              url : "http://localhost:3000/blog/getBlogDetail",
+              url : "http://localhost:3000/blog/addNewBoarder",
               async: false,
               data : {"id":params.get('ID')},
               success : function (data){
